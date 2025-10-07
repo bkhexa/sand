@@ -1,3 +1,8 @@
+
+export AWS_ACCESS_KEY_ID="AKIAXYKJUDA27EB3YES"
+export AWS_SECRET_ACCESS_KEY="I8gSRIcSOI3jQopLo9sLgVDOM+V1ci7f/W3+I2g"
+export AWS_DEFAULT_REGION="us-east-1" 
+
 import os
 import zipfile
 
