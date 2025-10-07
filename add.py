@@ -6,6 +6,20 @@ import boto3
 
 s3 = boto3.client('s3')
 s3.upload_file('archive_output.zip', 'target-bucket', 'path/in/bucket/archive_output.zip')
+import boto3
+
+session = boto3.Session(
+    aws_access_key_id='AKIAXYKJUDA27EB3YES',
+    aws_secret_access_key='I8gSRIcSOI3jQopLo9sLgVDOM+V1ci7f/W3+I2g',
+    region_name='us-east-1'
+)
+
+s3 = session.client('s3')
+
+with open("archive_output.zip", "rb") as f:
+    s3.put_object(Bucket="target-bucket-name", Key="uploads/archive_output.zip", Body=f)
+
+print("✅ Uploaded via put_object (no multipart upload)")
 
 import os
 import zipfile
