@@ -2,6 +2,10 @@
 export AWS_ACCESS_KEY_ID="AKIAXYKJUDA27EB3YES"
 export AWS_SECRET_ACCESS_KEY="I8gSRIcSOI3jQopLo9sLgVDOM+V1ci7f/W3+I2g"
 export AWS_DEFAULT_REGION="us-east-1" 
+import boto3
+
+s3 = boto3.client('s3')
+s3.upload_file('archive_output.zip', 'target-bucket', 'path/in/bucket/archive_output.zip')
 
 import os
 import zipfile
